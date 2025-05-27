@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace Incident Reporting</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Adjusted font for broader compatibility */
+            background-color: #F2F2F2; /* Light grey background */
+            color: #532A8C; /* Dark purple text */
+            margin: 0;
+            padding: 0;
+        }
+        .tabs-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #C3ACE8;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 2px solid #C3ACE8; /* Light purple border */
+            background-color: #9D8ABB; /* Muted purple for tab background */
+        }
+        .tab-button {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #532A8C; /* Dark purple for tab text */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .tab-button:hover {
+            background-color: #C3ACE8; /* Lighter purple on hover */
+        }
+        .tab-button.active {
+            background-color: #532A8C; /* Dark purple when active */
+            color: #FFFFFF; /* White text when active */
+            border-bottom: 3px solid #7ABF49; /* Green active tab indicator */
+            padding-bottom: 12px; /* Adjust for border */
+        }
+        .tab-content {
+            padding: 25px;
+            display: none;
+            color: #532A8C; /* Dark purple for content text */
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content h3 {
+            color: #7ABF49; /* Green for subheadings */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .tab-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        .tab-content ul li {
+            margin-bottom: 10px;
+        }
+        .tab-content ul li strong {
+            color: #532A8C; /* Dark purple for strong text */
+        }
+        .tab-content p {
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'Who')">Who</button>
+            <button class="tab-button" onclick="openTab(event, 'When')">When</button>
+            <button class="tab-button" onclick="openTab(event, 'Where')">Where</button>
+            <button class="tab-button" onclick="openTab(event, 'How')">How</button>
+        </div>
+
+        <div id="Who" class="tab-content active">
+            <h3>Who is responsible for reporting and action?</h3>
+            <ul>
+                <li><strong>Employee/Worker:</strong> You must notify your supervisor or employer as soon as possible after an injury. You also need to work with them on injury management and return-to-work plans.</li>
+                <li><strong>Employer (Person Conducting a Business or Undertaking - PCBU):</strong> They are responsible for telling the insurer and WorkCover. Employers must also have workers compensation insurance and set up return-to-work programs.</li>
+                <li><strong>Work Health and Safety (WHS) Representative/Committee:</strong> These are usually the first point of contact for employees with safety concerns or complaints. They formally report issues to the employer and can ask WorkCover to step in if issues aren't resolved.</li>
+                <li><strong>WorkCover:</strong> They must be contacted immediately for serious incidents like fatalities, serious injuries, or dangerous incidents.</li>
+                <li><strong>Scheme Agent/Insurer:</strong> They are notified by the employer about employee injuries where workers compensation might be paid. They then inform WorkCover.</li>
+            </ul>
+        </div>
+
+        <div id="When" class="tab-content">
+            <h3>When should incidents be reported?</h3>
+            <ul>
+                <li><strong>Immediately:</strong> Call WorkCover for very serious incidents such as fatalities, serious injuries, or dangerous incidents. This also applies if a serious incident occurs without injury but is life-threatening.</li>
+                <li><strong>As Soon As Possible:</strong> An employee must tell their employer about an injury without delay.</li>
+                <li><strong>Within 48 Hours:</strong> The employer must notify their Scheme Agent or insurer within 48 hours for employee injuries that could lead to workers compensation.</li>
+                <li><strong>Within 7 Days:</strong> WorkCover needs to be notified within seven days for incidents involving non-workers where the injury or illness prevents them from normal activities for 7 or more days. Employers also have seven days to send an injured worker's claim form to the insurer after receiving it.</li>
+                <li><strong>Before Resigning:</strong> If an injured worker plans to resign, they must report the injury before leaving their job.</li>
+            </ul>
+        </div>
+
+        <div id="Where" class="tab-content">
+            <h3>Where do reports need to be made or sent?</h3>
+            <ul>
+                <li><strong>Workplace Injury Register:</strong> All injuries and near misses should be recorded in this register, which must be easily accessible at the workplace.</li>
+                <li><strong>Incident Site:</strong> For serious incidents, the site must be left undisturbed until a WorkCover inspector attends or gives other instructions.</li>
+                <li><strong>WorkCover NSW:</strong> Contact them for serious incidents.</li>
+                <li><strong>Scheme Agent/Insurer:</strong> Send workers compensation claims and related documents to them.</li>
+                <li><strong>Workplace Displays:</strong> Employers must display a 'Watching out for you' poster and a summary of workers compensation laws in a visible area.</li>
+            </ul>
+        </div>
+
+        <div id="How" class="tab-content">
+            <h3>How are incidents reported?</h3>
+            <ul>
+                <li><strong>Phone:</strong> For serious incidents, call WorkCover immediately on 13 10 50. The WorkCover Claims Assistance Service is also available via this number.</li>
+                <li><strong>Written or Verbally:</strong> Employees can report injuries to their employer either in writing or by speaking to them.</li>
+                <li><strong>Incident Report Form/Online Form:</strong> Employers should complete incident reports. WorkCover may require an online form for certain non-worker incidents.</li>
+                <li><strong>Through WHS Channels:</strong> Employees can report health and safety concerns or risks through established WHS consultation processes at the practice.</li>
+                <li><strong>Medical Certificates:</strong> Injured workers need to provide up-to-date WorkCover medical certificates to support their claim.</li>
+                <li><strong>Claim Form:</strong> For workers compensation benefits beyond provisional liability, the employee completes and gives a Workers Compensation claim form to the employer.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+
+            // Get all elements with class="tab-content" and hide them
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active"); // Remove active class
+            }
+
+            // Get all elements with class="tab-button" and remove the "active" class
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active"); // Add active class
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Open the default tab on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tab-button").click();
+        });
+    </script>
+</body>
+</html>
